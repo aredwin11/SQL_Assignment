@@ -22,4 +22,4 @@ RIGHT(id_deptname, LEN(id_deptname) - CHARINDEX('-', id_deptname)) as deptname,
 sum(salary)
 from dept_tbl
 group by right(id_deptname, LEN(id_deptname) - CHARINDEX('-', id_deptname))
-order by deptname;
+orderÂ byÂ deptname;
