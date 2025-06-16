@@ -64,7 +64,7 @@ select users.name,sum(price) as amount_spent
 from users
 join sales on users.user_id = sales.user_id
 join product on sales.product_id = product.product_id
-group by users.name ;
+groupÂ byÂ users.name ;
 
 --7.Find the distinct dates of each customer visited the website: output should have 2 columns date and customer name 
 select distinct created_date,users.name 
@@ -79,7 +79,7 @@ user_id order by created_date)
 as row_num from sales)s 
 inner join users u on s.user_id=u.user_id
 inner join product p on s.product_id = p.product_id
-where s.row_num=1;
+whereÂ s.row_num=1;
 
 --9.What is the most purchased item of each customer and how many times the customer has purchased it:
 select count(*) as most_purchased,sales.name,product.product_name
@@ -102,25 +102,25 @@ JOIN product p ON s.product_id = p.product_id
 JOIN gold_member_users g ON s.user_id = g.user_id
 WHERE s.created_date >= g.signup_date
 GROUP BY g.user_id, g.name
-ORDER BY g.user_id;
+ORDERÂ BYÂ g.user_id;
 
 --12.Find the Customers names whose name starts with M
 SELECT name
 FROM users
-WHERE name LIKE 'M%';
+WHERE nameÂ LIKEÂ 'M%';
 
 --13.Find the Distinct customer Id of each customer
 SELECT DISTINCT user_id 
 FROM sales;
 
 --14.Change the Column name from product table as price_value from price
-EXEC sp_rename 'product.price', 'price_value', 'COLUMN'
+EXEC sp_rename 'product.price', 'price_value',Â 'COLUMN'
 select * from product
 
---15.Change the Column value product_name – Ipad to Iphone from product table
+--15.Change the Column value product_name â€“ Ipad to Iphone from product table
 UPDATE product
 SET product_name = 'Iphone'
-WHERE product_name = 'Ipad';
+WHERE product_nameÂ =Â 'Ipad';
 select * from product
 
 --16.Change the table name of gold_member_users to gold_membership_users
@@ -138,7 +138,7 @@ WHERE users.name IN (
 );
 UPDATE users
 SET Status = 'No'
-WHERE Status IS NULL;
+WHEREÂ StatusÂ ISÂ NULL;
 
 select * from users
 
@@ -152,7 +152,7 @@ DELETE FROM users WHERE user_id = 2;
 SELECT * FROM users;
 --Rollback
 ROLLBACK;
-SELECT * FROM users;
+SELECTÂ *Â FROMÂ users;
 
 --19.Insert one more record as same (3,'Laptop',330) as product table
 insert into product values (4,'Laptop',330)
