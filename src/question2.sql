@@ -21,6 +21,6 @@ SELECT sell_date,COUNT(*) AS num_sold,STRING_AGG(LTRIM(RTRIM(product)), ', ')
 WITHIN GROUP (ORDER BY product) AS product_list
 FROM product_details
 GROUP BY sell_date
-ORDER BY sell_date;
+ORDERÂ BYÂ sell_date;
 
 select * from product_details;
